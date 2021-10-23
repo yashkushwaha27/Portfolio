@@ -13,7 +13,6 @@ import reactReduxThunk from "../images/react-redux-thunk.jpg";
 import reactRedux from "../images/react-redux.jpg";
 import Swal from "sweetalert2";
 
-
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "transparent",
@@ -25,16 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const popUp = (e) => {
-  e.preventDefault();
-  Swal.fire({
-    icon: 'info',
-    title: 'Oops...',
-    text: 'This functionality will be added soon!',
-  })
-}
-
-const projects = [  
+const projects = [
   {
     name: "React Redux Product List",
     description: `A basic usage of fakestore API using react-redux. A catalog like structure created using cards.`,
@@ -45,7 +35,7 @@ const projects = [
     name: "React Redux Thunk Product List",
     description: `A basic usage of fakestore API using react-redux-thunk. A catalog like structure created using cards.`,
     image: reactReduxThunk,
-    liveDemo: "https://yashkushwaha27.github.io/React-Redux-Thunk/"
+    liveDemo: "https://yashkushwaha27.github.io/React-Redux-Thunk/",
   },
 ];
 
@@ -56,16 +46,21 @@ const Portfolio = () => {
       <Grid container justify="center">
         {projects.map((project, i) => (
           <Grid item xs={12} sm={8} md={4} key={i}>
-            <Card className={classes.cardContainer} style={{ height: "400px" }}>
+            <Card className={classes.cardContainer} style={{ height: "430px" }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  alt="Project 1"
-                  height="140"
+                  alt={project.name}
+                  height="180"
+                  style={{ objectFit: "fill" }}
                   image={project.image}
                 />
                 <CardContent>
-                  <Typography variant="h5" gutterBottom>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    style={{ overflowY: "scroll", height: "50px" }}
+                  >
                     {project.name}
                   </Typography>
                   <Typography
@@ -78,7 +73,18 @@ const Portfolio = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary" onClick={popUp}>
+                <Button
+                  size="small"
+                  color="primary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    Swal.fire({
+                      icon: "success",
+                      title: "Please Copy The Link Below",
+                      text: project.liveDemo,
+                    });
+                  }}
+                >
                   Share
                 </Button>
                 <Button
