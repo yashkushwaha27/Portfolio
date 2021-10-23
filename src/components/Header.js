@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   description: {
     color: "tomato",
+    paddingLeft: '10px',
+    paddingRight: '10px'
   },
   typedContainer: {
     position: "absolute",
@@ -30,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100vw",
     textAlign: "center",
     zIndex: 1,
-    // height: '100vh'
   },
 }));
 
