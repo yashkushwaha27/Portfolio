@@ -54,10 +54,10 @@ const menuItems = [
   {
     listIcon: <AssignmentInd />,
     listText: "Work Experience",
-    listPath: "/WorkExperience",
+    listPath: "/Portfolio/WorkExperience",
   },
-  { listIcon: <AccountTree />, listText: "Projects", listPath: "/projects" },
-  { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
+  { listIcon: <AccountTree />, listText: "Projects", listPath: "/Portfolio/projects" },
+  { listIcon: <ContactMail />, listText: "Contact", listPath: "/Portfolio/contact" },
 ];
 
 const Navbar = () => {
