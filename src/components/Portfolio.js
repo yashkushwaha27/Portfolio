@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import reactReduxThunk from "../images/react-redux-thunk.jpg";
 import reactRedux from "../images/react-redux.jpg";
+import Swal from "sweetalert2";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +24,15 @@ const useStyles = makeStyles((theme) => ({
     margin: "3rem auto",
   },
 }));
+
+const popUp = (e) => {
+  e.preventDefault();
+  Swal.fire({
+    icon: 'info',
+    title: 'Oops...',
+    text: 'This functionality will be added soon!',
+  })
+}
 
 const projects = [  
   {
@@ -68,7 +78,7 @@ const Portfolio = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" onClick={popUp}>
                   Share
                 </Button>
                 <Button
